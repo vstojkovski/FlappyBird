@@ -1,0 +1,12 @@
+C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна\FlappyBird\FlappyBird\FlappyBird\bin\Debug\FlappyBird.exe.config
+C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна\FlappyBird\FlappyBird\FlappyBird\bin\Debug\FlappyBird.exe
+C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна\FlappyBird\FlappyBird\FlappyBird\bin\Debug\FlappyBird.pdb
+C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна\FlappyBird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.csprojResolveAssemblyReference.cache
+C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна\FlappyBird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.Form1.resources
+C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна\FlappyBird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.Properties.Resources.resources
+C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна\FlappyBird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.csproj.GenerateResource.Cache
+C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна\FlappyBird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.exe
+C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна\FlappyBird\FlappyBird\FlappyBird\obj\Debug\FlappyBird.pdb
+C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна1\FlappyBird\FlappyBird\bin\Debug\FlappyBird.exe.config
+C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна1\FlappyBird\FlappyBird\obj\Debug\FlappyBird.exe
+C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна1\FlappyBird\FlappyBird\obj\Debug\FlappyBird.pdb
