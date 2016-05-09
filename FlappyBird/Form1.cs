@@ -20,16 +20,22 @@ namespace FlappyBird
         public Form1()
         {
             InitializeComponent();
-            Stage = new Stage();
+            Stage = new Stage(Width, Height);
             generateObstruction = 0;
             random = new Random();
             DoubleBuffered = true;
-            timer1.Start();
+            lbScore.Text = "";
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(generateObstruction % 20 == 0)
+            if (Stage.Collision())
+            {
+                Stage.Hit();
+                timer1.Stop();
+            }
+            if (generateObstruction % 20 == 0)
             {      
                 int height = random.Next(150, 300);
 
@@ -37,8 +43,9 @@ namespace FlappyBird
                 int y = 560 - tmp;
                 int x = 900;
 
-                Stage.AddObstruction(new Point(x, 0), height);
-                Stage.AddObstruction(new Point(x, y), 560 - y);
+                Stage.AddObstruction(new Point(x, 0), height, true);
+                Stage.AddObstruction(new Point(x, y), 560 - y, false);
+
 
             }
             ++generateObstruction;
@@ -46,10 +53,32 @@ namespace FlappyBird
             Invalidate(true);
         }
 
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            Stage.MoveBird(Height);
+            Stage.CalculatePoints();
+            lbScore.Text = string.Format("{0}", Stage.Points);
+            Invalidate(true);
+        }
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.Clear(Color.White);
             Stage.Draw(e.Graphics);
         }
+
+        private void Form1_MouseUp(object sender, MouseEventArgs e)
+        {
+            Stage.stopBird();
+        }
+
+        private void Form1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (!Stage.Bird.IsHit)
+            {
+                timer1.Start();
+                timer2.Start();
+            }
+            Stage.startBird();
+        }
+
     }
 }

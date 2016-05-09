@@ -10,15 +10,19 @@ namespace FlappyBird
     public class Stage
     {
         public List<Obstruction> Obstructions { get; set;}
+        public Bird Bird { get; set; }
+        public int Points { get; set; }
 
-        public Stage()
+        public Stage(int widht, int height)
         {
             Obstructions = new List<Obstruction>();
+            Bird = new Bird(new Point(widht/2, height/2));
+            Points = 0;
         }
 
-        public void AddObstruction(Point point, int height)
+        public void AddObstruction(Point point, int height, bool isPassed)
         {
-            Obstruction o = new Obstruction(point, height);
+            Obstruction o = new Obstruction(point, height, isPassed);
             Obstructions.Add(o);
         }
 
@@ -40,6 +44,22 @@ namespace FlappyBird
                     Obstructions.RemoveAt(i);
                 }
             }
+
+        }
+
+        public void MoveBird(int height)
+        {
+            Bird.Move(height);
+        }
+        public void startBird()
+        {
+            Bird.IsMoving = true;
+            Bird.MovingUp = true;          
+        }
+
+        public void stopBird()
+        {
+            Bird.MovingUp = false;
         }
 
         public void Draw(Graphics g)
@@ -47,6 +67,46 @@ namespace FlappyBird
             foreach (Obstruction o in Obstructions)
             {
                 o.Draw(g);
+            }
+
+            Bird.Draw(g);
+        }
+
+        public bool Collision()
+        {
+            foreach(Obstruction o in Obstructions)
+            {
+                if(Bird.Center.X < o.Point.X + Obstruction.WIDTH + Bird.RADIUS  && Bird.Center.X + 3 * Bird.RADIUS > o.Point.X && Bird.Center.Y < o.Point.Y + o.Height + Bird.RADIUS  && Bird.RADIUS + Bird.Center.Y > o.Point.Y)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public bool BirdPosition()
+        {
+            if(Bird.Center.Y == 560)
+            {
+                return true;
+            }
+            return false;
+        }
+        public void Hit()
+        {
+            Bird.IsHit = true;
+        }
+
+        public void CalculatePoints()
+        {
+            foreach (Obstruction o in Obstructions)
+            {
+                if (Bird.Center.X + Bird.RADIUS >= o.Point.X + Obstruction.WIDTH / 2 && !o.IsPassed)
+                {
+                    o.IsPassed = true;
+                    Points++;
+                }
+               
             }
         }
     }

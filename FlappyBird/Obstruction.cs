@@ -10,8 +10,7 @@ namespace FlappyBird
     public class Obstruction
     {
         public static readonly int WIDTH = 80;
-
-        public static readonly int HEIGHT = 300;
+        public static readonly int SPEED = 10;
 
         public Point Point { get; set; }
 
@@ -19,21 +18,24 @@ namespace FlappyBird
 
         public bool Delete { get; set; }
 
-        public Obstruction(Point point, int height)
+        public bool IsPassed { get; set; }
+
+        public Obstruction(Point point, int height, bool isPassed)
         {
             Point = point;
             Height = height;
             Delete = false;
+            IsPassed = isPassed;
         }
 
         public void Move()
         {
-            Point = new Point(Point.X - 10, Point.Y);
+            Point = new Point(Point.X - SPEED, Point.Y);
         }
 
         public void Draw(Graphics g)
         {
-            Brush brush = new SolidBrush(Color.Green);
+            Brush brush = new SolidBrush(Color.GreenYellow);
             g.FillRectangle(brush, Point.X, Point.Y, WIDTH, Height);
             brush.Dispose();
         }
