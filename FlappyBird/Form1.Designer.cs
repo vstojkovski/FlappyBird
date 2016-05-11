@@ -33,6 +33,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.lbScore = new System.Windows.Forms.Label();
+            this.lbStart = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // timer1
@@ -47,11 +48,22 @@
             // lbScore
             // 
             this.lbScore.AutoSize = true;
-            this.lbScore.Location = new System.Drawing.Point(737, 13);
+            this.lbScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbScore.Location = new System.Drawing.Point(717, 9);
             this.lbScore.Name = "lbScore";
-            this.lbScore.Size = new System.Drawing.Size(35, 13);
+            this.lbScore.Size = new System.Drawing.Size(93, 33);
             this.lbScore.TabIndex = 0;
             this.lbScore.Text = "label1";
+            // 
+            // lbStart
+            // 
+            this.lbStart.AutoSize = true;
+            this.lbStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStart.Location = new System.Drawing.Point(335, 318);
+            this.lbStart.Name = "lbStart";
+            this.lbStart.Size = new System.Drawing.Size(131, 25);
+            this.lbStart.TabIndex = 1;
+            this.lbStart.Text = "Click to start";
             // 
             // Form1
             // 
@@ -60,6 +72,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.lbStart);
             this.Controls.Add(this.lbScore);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -76,6 +89,7 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Label lbScore;
+        private System.Windows.Forms.Label lbStart;
     }
 }
 

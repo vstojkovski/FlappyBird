@@ -16,3 +16,4 @@ C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмира
 C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна1\FlappyBird\FlappyBird\obj\Debug\FlappyBird.Form1.resources
 C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна1\FlappyBird\FlappyBird\obj\Debug\FlappyBird.Properties.Resources.resources
 C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна1\FlappyBird\FlappyBird\obj\Debug\FlappyBird.csproj.GenerateResource.Cache
+C:\Users\Vlatko\Desktop\4 Семестар\Визуелно програмирање\Проектна1\FlappyBird\FlappyBird\obj\Debug\FlappyBird.DisplayScore.resources

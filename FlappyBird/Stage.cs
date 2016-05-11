@@ -12,12 +12,14 @@ namespace FlappyBird
         public List<Obstruction> Obstructions { get; set;}
         public Bird Bird { get; set; }
         public int Points { get; set; }
+        public int BestPoints { get; set; }
 
-        public Stage(int widht, int height)
+        public Stage(int widht, int height, int bestPoints)
         {
             Obstructions = new List<Obstruction>();
             Bird = new Bird(new Point(widht/2, height/2));
             Points = 0;
+            BestPoints = bestPoints;
         }
 
         public void AddObstruction(Point point, int height, bool isPassed)
@@ -76,7 +78,7 @@ namespace FlappyBird
         {
             foreach(Obstruction o in Obstructions)
             {
-                if(Bird.Center.X < o.Point.X + Obstruction.WIDTH + Bird.RADIUS  && Bird.Center.X + 3 * Bird.RADIUS > o.Point.X && Bird.Center.Y < o.Point.Y + o.Height + Bird.RADIUS  && Bird.RADIUS + Bird.Center.Y > o.Point.Y)
+                if(Bird.Center.X < o.Point.X + Obstruction.WIDTH + Bird.RADIUS  && Bird.Center.X + 2 * Bird.RADIUS > o.Point.X && Bird.Center.Y < o.Point.Y + o.Height + Bird.RADIUS  && Bird.RADIUS + Bird.Center.Y > o.Point.Y)
                 {
                     return true;
                 }
@@ -107,6 +109,14 @@ namespace FlappyBird
                     Points++;
                 }
                
+            }
+        }
+
+        public void changeBestPoints()
+        {
+            if(BestPoints < Points)
+            {
+                BestPoints = Points;
             }
         }
     }

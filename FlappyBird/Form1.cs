@@ -20,12 +20,11 @@ namespace FlappyBird
         public Form1()
         {
             InitializeComponent();
-            Stage = new Stage(Width, Height);
+            Stage = new Stage(Width, Height, 0);
             generateObstruction = 0;
             random = new Random();
             DoubleBuffered = true;
             lbScore.Text = "";
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -33,8 +32,22 @@ namespace FlappyBird
             if (Stage.Collision())
             {
                 Stage.Hit();
+                Stage.changeBestPoints();
                 timer1.Stop();
+
+                DisplayScore displayScore = new DisplayScore(Stage.Points, Stage.BestPoints);
+
+                if (displayScore.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    lbStart.Show();
+                    Stage = new Stage(Width, Height, Stage.BestPoints);
+                }
+                else
+                {
+                    this.Close();
+                }
             }
+            
             if (generateObstruction % 20 == 0)
             {      
                 int height = random.Next(150, 300);
@@ -72,12 +85,16 @@ namespace FlappyBird
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (!Stage.Bird.IsHit)
+            lbStart.Hide();
+            if(e.Button == System.Windows.Forms.MouseButtons.Left)
             {
-                timer1.Start();
-                timer2.Start();
+                if (!Stage.Bird.IsHit)
+                {
+                    timer1.Start();
+                    timer2.Start();
+                }
+                Stage.startBird();
             }
-            Stage.startBird();
         }
 
     }

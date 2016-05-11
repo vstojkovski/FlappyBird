@@ -44,20 +44,37 @@ namespace FlappyBird
                 {
                     if (MovingUp)
                     {
-                        Center = new Point(Center.X, Center.Y - MOVE_UP);
-                        MovingUp = false;
+                        if(Center.Y - MOVE_UP < 0)
+                        {
+                            Center = new Point(Center.X, Center.Y + MOVE_DOWN);
+                            
+                        }
+                       else
+                        {
+                            Center = new Point(Center.X, Center.Y - MOVE_UP);
+                            MovingUp = false;
+                        }
                     }
 
                     else if (!MovingUp)
                     {
-                        Center = new Point(Center.X, Center.Y + MOVE_DOWN);
+                        if(Center.Y + MOVE_DOWN > height - 40)
+                        {
+                            Center = new Point(Center.X, Center.Y - MOVE_UP);
+                   
+                        }
+                        else
+                        {
+                            Center = new Point(Center.X, Center.Y + MOVE_DOWN);
+                        }
+                        
                     }
 
                 }
             }
             else
             {
-                if(Center.Y + 30 <= 560)
+                if(Center.Y + 30 <= height - 40 )
                 {
                     Center = new Point(Center.X, Center.Y + 30);
                 }
