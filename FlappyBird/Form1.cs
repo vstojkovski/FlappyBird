@@ -16,11 +16,10 @@ namespace FlappyBird
         private int generateObstruction;
         private Random random;
 
-
         public Form1()
         {
             InitializeComponent();
-            Stage = new Stage(Width, Height, 0);
+            Stage = new Stage(Width, Height);
             generateObstruction = 0;
             random = new Random();
             DoubleBuffered = true;
@@ -29,7 +28,7 @@ namespace FlappyBird
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (Stage.Collision())
+            if (Stage.Collision() || Stage.Bird.IsHit)
             {
                 Stage.Hit();
                 Stage.changeBestPoints();
@@ -40,7 +39,7 @@ namespace FlappyBird
                 if (displayScore.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     lbStart.Show();
-                    Stage = new Stage(Width, Height, Stage.BestPoints);
+                    Stage = new Stage(Width, Height);
                 }
                 else
                 {
@@ -51,13 +50,13 @@ namespace FlappyBird
             if (generateObstruction % 20 == 0)
             {      
                 int height = random.Next(150, 300);
-
-                int tmp = 560 - height - 100;
-                int y = 560 - tmp;
-                int x = 900;
+                int formHeight = Height - 40;
+                int tmp = formHeight - height - 100;
+                int y = formHeight - tmp;
+                int x = Width + 100;
 
                 Stage.AddObstruction(new Point(x, 0), height, true);
-                Stage.AddObstruction(new Point(x, y), 560 - y, false);
+                Stage.AddObstruction(new Point(x, y), formHeight - y, false);
 
 
             }
@@ -96,6 +95,5 @@ namespace FlappyBird
                 Stage.startBird();
             }
         }
-
     }
 }

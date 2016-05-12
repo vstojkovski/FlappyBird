@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,12 +16,21 @@ namespace FlappyBird
         public int Points { get; set; }
         public int BestPoints { get; set; }
 
-        public Stage(int widht, int height, int bestPoints)
+        private string path;
+
+        public Stage(int widht, int height)
         {
             Obstructions = new List<Obstruction>();
             Bird = new Bird(new Point(widht/2, height/2));
             Points = 0;
-            BestPoints = bestPoints;
+            path = Path.GetDirectoryName(Process.GetCurrentProcess().MainModule.FileName) + @"\HighScore.txt";
+            if (!File.Exists(path))
+            {
+                System.IO.File.WriteAllText(path, string.Format("{0}", 0));
+
+            }
+            string bScore = System.IO.File.ReadAllText(path);
+            BestPoints = Int32.Parse(bScore);
         }
 
         public void AddObstruction(Point point, int height, bool isPassed)
@@ -86,14 +97,7 @@ namespace FlappyBird
             return false;
         }
 
-        public bool BirdPosition()
-        {
-            if(Bird.Center.Y == 560)
-            {
-                return true;
-            }
-            return false;
-        }
+        
         public void Hit()
         {
             Bird.IsHit = true;
@@ -117,6 +121,8 @@ namespace FlappyBird
             if(BestPoints < Points)
             {
                 BestPoints = Points;
+
+                System.IO.File.WriteAllText(path, string.Format("{0}",BestPoints));
             }
         }
     }

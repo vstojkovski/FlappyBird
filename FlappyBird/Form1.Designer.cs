@@ -42,7 +42,7 @@
             // 
             // timer2
             // 
-            this.timer2.Interval = 90;
+            this.timer2.Interval = 50;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // lbScore
@@ -74,8 +74,10 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.lbStart);
             this.Controls.Add(this.lbScore);
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "FlappyBird";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);

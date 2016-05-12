@@ -77,18 +77,20 @@
             // lbScore
             // 
             this.lbScore.AutoSize = true;
+            this.lbScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbScore.Location = new System.Drawing.Point(97, 46);
             this.lbScore.Name = "lbScore";
-            this.lbScore.Size = new System.Drawing.Size(35, 13);
+            this.lbScore.Size = new System.Drawing.Size(41, 13);
             this.lbScore.TabIndex = 4;
             this.lbScore.Text = "label1";
             // 
             // lbBest
             // 
             this.lbBest.AutoSize = true;
+            this.lbBest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbBest.Location = new System.Drawing.Point(97, 102);
             this.lbBest.Name = "lbBest";
-            this.lbBest.Size = new System.Drawing.Size(35, 13);
+            this.lbBest.Size = new System.Drawing.Size(41, 13);
             this.lbBest.TabIndex = 5;
             this.lbBest.Text = "label1";
             // 
@@ -103,8 +105,10 @@
             this.Controls.Add(this.lbTextScore);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnNew);
+            this.MaximizeBox = false;
             this.Name = "DisplayScore";
-            this.Text = "DisplayScore";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Score";
             this.ResumeLayout(false);
             this.PerformLayout();
 

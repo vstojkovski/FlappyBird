@@ -60,7 +60,7 @@ namespace FlappyBird
                     {
                         if(Center.Y + MOVE_DOWN > height - 40)
                         {
-                            Center = new Point(Center.X, Center.Y - MOVE_UP);
+                            IsHit = true;
                    
                         }
                         else
@@ -80,7 +80,7 @@ namespace FlappyBird
                 }
                 else
                 {
-                    Center = new Point(Center.X, 550);
+                    Center = new Point(Center.X, height - 50);
                 }
             }
             
