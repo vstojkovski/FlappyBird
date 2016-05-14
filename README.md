@@ -13,16 +13,22 @@
 
 Главните податоци и функции се чуваат во класите: ```public class Bird```, ```public class Stage``` и ```public class Obstruction```.
 
-![alt tag](https://github.com/vstojkovski/FlappyBird/blob/master/Screenshot_1.png "Slika 1")	
+	
 <br/>
 Во рамките на класата Bird во функцијата ```Move(int height)``` е овозможено придвижувањето на топчето нагоре доколку кликаме односно надолу во спротивен случај. Променливата height чија вредност се задава при повик на функцијата ни ја претставува висината на формата и ја користиме за да провериме дали птицата ја надминува таа висина и доколку ја надминуа играта се прекинува и се отвора формата за приказ на поените.
+Види слика подолу.
 <br/>
-![alt tag](http://prnt.sc/b43t15)
+![alt tag](https://github.com/vstojkovski/FlappyBird/blob/master/Screenshots/Screenshot_1.png)
+
 <br/>
 Во рамките на класата Stage која ни претставува сцената врз која се исцртуваат препреките има неколку функции од кои една е и функцијата ```public void CalculatePoints()``` во која во циклус се изминуваат сите препреки и доколку топчето ја поминало препреката се зголемуваат поените и се поставува својството IsPassed на true за да не се зголемуваат поените доколку препреката не е се уште избришана од public ```List<Obstruction> Obstructions { get; set;}```.
+Види слика подолу.
 <br/>
-![alt tag](http://prnt.sc/b43t2a)
+![alt tag](https://github.com/vstojkovski/FlappyBird/blob/master/Screenshots/Screenshot_2.png)
+
 <br/>
 Исто така друга поважна ф-ја во рамките на класата Stage е и функцијата ```public bool Collision()``` со која се одредува дали топчето дошло во допир со некоја од препреките за да се превземе соодветна акција во зависнот дали е допрена некоја препрека или не.
-	
+Види слика подолу.
+<br/>
+![alt tag](https://github.com/vstojkovski/FlappyBird/blob/master/Screenshots/Screenshot_3.png)	
 	
