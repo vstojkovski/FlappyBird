@@ -74,14 +74,7 @@ namespace FlappyBird
             }
             else
             {
-                if(Center.Y + 30 <= height - 40 )
-                {
-                    Center = new Point(Center.X, Center.Y + 30);
-                }
-                else
-                {
-                    Center = new Point(Center.X, height - 50);
-                }
+                Center = new Point(Center.X, height - 50); 
             }
             
         }
