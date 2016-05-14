@@ -13,7 +13,7 @@
 
 Главните податоци и функции се чуваат во класите: ```public class Bird```, ```public class Stage``` и ```public class Obstruction```.
 
-![alt tag](https://github.com/vstojkovski/FlappyBird/blob/master/Screenshot_1.png, "Slika 1")	
+![alt tag](https://github.com/vstojkovski/FlappyBird/blob/master/Screenshot_1.png "Slika 1")	
 <br/>
 Во рамките на класата Bird во функцијата ```Move(int height)``` е овозможено придвижувањето на топчето нагоре доколку кликаме односно надолу во спротивен случај. Променливата height чија вредност се задава при повик на функцијата ни ја претставува висината на формата и ја користиме за да провериме дали птицата ја надминува таа висина и доколку ја надминуа играта се прекинува и се отвора формата за приказ на поените.
 <br/>
